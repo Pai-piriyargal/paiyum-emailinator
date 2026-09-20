@@ -1,5 +1,8 @@
-pandas
-PyPDF2
-python-docx
-fuzzywuzzy
-rapidfuzz
+pandas>=1.5.0
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+rapidfuzz>=3.0.0
+fastapi>=0.95.0
+uvicorn>=0.20.0
+jinja2>=3.1.2
+pydantic>=1.10.0
