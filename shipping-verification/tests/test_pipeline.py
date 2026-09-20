@@ -68,3 +68,12 @@ class TestShippingPipeline(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+def test_classifier_edge_cases(self):
+        # Test empty or unusual email payloads
+        empty_email = {"subject": "", "body": "", "attachments": []}
+        missing_keys_email = {"subject": "URGENT CHECK"}
+        
+        # Verify fallback or safe handling
+        self.assertEqual(self.classifier.classify(empty_email), "UNKNOWN")
+        self.assertEqual(self.classifier.classify(missing_keys_email), "UNKNOWN")
