@@ -14,25 +14,25 @@ class FieldExtractor:
     def __init__(self):
         self.alias_map = {
             "shipper": [
-                "shipper/exporter", "shipper", "exporter", "seller", "shipper name"
+                "shipper/exporter", "shipper", "exporter", "seller", "shipper name", "company name"
             ],
             "consignee": [
-                "consignee (non-negotiable)", "consignee", "to the order of", "buyer", "consignee name"
+                "consignee (non-negotiable)", "consignee", "to the order of", "buyer", "consignee name", "consignee address"
             ],
             "notify_party": [
-                "notify party", "notify", "notify_party", "notify party name", "same as consignee"
+                "notify party", "notify", "notify_party", "notify party name", "also notify"
             ],
             "port_of_loading": [
-                "port of loading (pol)", "port of loading", "pol", "load port", "loading port", "place of receipt"
+                "port of loading (pol)", "port of loading", "pol", "load port", "loading port", "place of receipt", "port of receipt"
             ],
             "port_of_discharge": [
-                "discharge port", "port of discharge", "pod", "port of discharge (pod)", "dest port", "destination port", "place of delivery"
+                "discharge port", "port of discharge", "pod", "port of discharge (pod)", "dest port", "destination port", "place of delivery", "final destination"
             ],
             "container_count": [
-                "no. of containers or packages", "no. of containers", "total containers", "container count", "containers", "quantity", "container cnt", "no of containers", "packages / containers"
+                "no. of containers or packages", "no. of containers", "total containers", "container count", "containers", "quantity", "container cnt", "no of containers", "packages / containers", "units"
             ],
             "gross_weight_kg": [
-                "gross weight (kg)", "gross wt (kgs)", "gross weight", "gross wt", "gross weight(kg)", "total gross weight", "gross weight (kgs)"
+                "gross weight (kg)", "gross wt (kgs)", "gross weight", "gross wt", "gross weight(kg)", "total gross weight", "gross weight (kgs)", "weight", "gw"
             ]
         }
 
@@ -69,30 +69,35 @@ class FieldExtractor:
                 i += 1
                 continue
 
-            if ":" in line:
-                parts = line.split(":", 1)
+            if ":" in line or "-" in line:
+                parts = re.split(r"[:\-]", line, maxsplit=1)
                 key = parts[0].strip().lower()
                 val = parts[1].strip()
 
-                # Multi-line block check (e.g. address under header)
+                # Multi-line block check (e.g., address under header)
                 if not val and i + 1 < len(lines):
                     next_line = lines[i+1].strip()
-                    if next_line and not (":" in next_line and len(next_line.split(":")[0].strip()) < 35):
+                    if next_line and not ((":" in next_line or "-" in next_line) and len(re.split(r"[:\-]", next_line)[0].strip()) < 35):
                         i += 1
                         val = next_line
 
                 kv_pairs[key] = val
             i += 1
 
-        # Match mapped fields
+        # Match mapped fields using partial prefix & exact alias matching
         for field_name, aliases in self.alias_map.items():
             found_val = None
             for alias in aliases:
-                if alias in kv_pairs and kv_pairs[alias]:
-                    found_val = kv_pairs[alias]
+                # Direct match or key starts with alias
+                for k, v in kv_pairs.items():
+                    if k == alias or k.startswith(alias):
+                        if v:
+                            found_val = v
+                            break
+                if found_val:
                     break
 
-            # Fallback regex search if not in key-value dict
+            # Fallback regex search if not found in key-value pairs
             if not found_val:
                 found_val = self._regex_fallback(field_name, text)
 
@@ -111,11 +116,11 @@ class FieldExtractor:
     def _regex_fallback(self, field_name, text):
         """Regex fallback for fields when standard line key-value fails."""
         if field_name == "container_count":
-            m = re.search(r"(?:total containers|container count|containers)\s*[:\-]?\s*(\d+)", text, re.IGNORECASE)
+            m = re.search(r"(?:total containers|container count|containers|units)\s*[:\-]?\s*(\d+)", text, re.IGNORECASE)
             if m:
                 return m.group(1)
         elif field_name == "gross_weight_kg":
-            m = re.search(r"(?:gross weight|gross wt)\s*(?:\(kgs?\))?\s*[:\-]?\s*([\d,]+(?:\.\d+)?)", text, re.IGNORECASE)
+            m = re.search(r"(?:gross weight|gross wt|gw)\s*(?:\([^\)]+\))?\s*[:\-]?\s*([\d,]+(?:\.\d+)?\s*(?:kg|kgs|lbs|mt)?)", text, re.IGNORECASE)
             if m:
                 return m.group(1)
         return None
@@ -123,6 +128,7 @@ class FieldExtractor:
     def normalize_value(self, field_name, val):
         """
         Normalizes extracted field values into standard representation.
+        Handles unit conversions (LBS/MT -> KG).
         """
         if val is None:
             return None
@@ -130,17 +136,27 @@ class FieldExtractor:
         val_str = str(val).strip()
 
         if field_name == "container_count":
-            # Extract first integer, e.g. "6 x 40'HC" -> 6
-            m = re.search(r"(\d+)", val_str)
+            # Extract container number, e.g. "20' Dry Standard x 4" -> 4 or "6 x 40'HC" -> 6
+            m = re.search(r"(\d+)\s*(?:x|units|containers|ctns|40ft|20ft)?", val_str, re.IGNORECASE)
             return int(m.group(1)) if m else None
 
         elif field_name == "gross_weight_kg":
-            # Extract float weight, e.g. "131,058 KG" -> 131058.0
+            # Extract numeric weight and unit (convert LBS / MT to KG)
             clean = val_str.replace(",", "")
-            m = re.search(r"(\d+(?:\.\d+)?)", clean)
-            return float(m.group(1)) if m else None
+            m = re.search(r"(\d+(?:\.\d+)?)\s*(kg|kgs|kilograms|lbs|pound|mt|metric tons)?", clean, re.IGNORECASE)
+            if m:
+                weight = float(m.group(1))
+                unit = m.group(2).lower() if m.group(2) else "kg"
+
+                if unit in ["lbs", "pound"]:
+                    weight = weight * 0.453592  # LBS to KG
+                elif unit in ["mt", "metric tons"]:
+                    weight = weight * 1000.0   # MT to KG
+
+                return round(weight, 2)
+            return None
 
         else:
-            # Clean text fields: upper case, collapse whitespace
+            # Clean text fields: upper case, collapse extra whitespace
             val_clean = re.sub(r"\s+", " ", val_str).strip().upper()
             return val_clean if val_clean else None
