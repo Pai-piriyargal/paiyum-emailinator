@@ -18,9 +18,12 @@ def get_mock_data():
     }
 
 def load_submission():
-    if SUBMISSION_PATH.exists():
+    target = SUBMISSION_PATH
+    if not target.exists() and Path("shipping-verification/output.json").exists():
+        target = Path("shipping-verification/output.json")
+    if target.exists():
         try:
-            data = json.loads(SUBMISSION_PATH.read_text(encoding="utf-8"))
+            data = json.loads(target.read_text(encoding="utf-8"))
             if data: return data # Return real data if it exists
         except json.JSONDecodeError:
             pass
@@ -28,6 +31,10 @@ def load_submission():
 
 def save_submission(data):
     SUBMISSION_PATH.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    output_alt = Path("shipping-verification/output.json")
+    if output_alt.parent.exists():
+        output_alt.write_text(json.dumps(data, indent=2), encoding="utf-8")
+
 
 @app.get("/", response_class=HTMLResponse)
 async def dashboard(request: Request):
