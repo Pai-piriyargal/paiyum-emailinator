@@ -7,24 +7,13 @@ app = FastAPI(title="Paiyum Emailinator Command Center")
 
 SUBMISSION_PATH = Path("submission.json")
 
-def get_mock_data():
-    """Generates realistic fake data if the team hasn't processed emails yet."""
-    return {
-        "TRC-899-AX": {"status": "MISMATCH", "urgency_score": "HIGH", "category": "BL_COMPARISON", "review_explanation": "Critical discrepancy: Gross weight variance exceeds 5% tolerance threshold.", "defect_fields": ["gross_weight_kg", "container_count"], "si_data": {"gross_weight_kg": "24,500", "container_count": "4", "port_of_loading": "MYPKG"}, "bl_data": {"gross_weight_kg": "22,100", "container_count": "3", "port_of_loading": "MYPKG"}},
-        "TRC-412-BB": {"status": "NEEDS_REVIEW", "urgency_score": "MEDIUM", "category": "SI_REQUEST", "review_explanation": "Fuzzy match failure on Consignee address. Operator verification required.", "defect_fields": ["consignee"], "si_data": {"consignee": "Averis Global Supply Chain Ltd."}, "bl_data": {"consignee": "Averis Glob. Supply"}},
-        "TRC-102-OK": {"status": "OK", "urgency_score": "LOW", "category": "BL_COMPARISON", "review_explanation": "All neural extraction targets verified against ground truth.", "defect_fields": []},
-        "TRC-991-FX": {"status": "MISMATCH", "urgency_score": "HIGH", "category": "BL_COMPARISON", "review_explanation": "Port of Discharge LOCODE mismatch detected.", "defect_fields": ["port_of_discharge"], "si_data": {"port_of_discharge": "CNNTG (Nantong)"}, "bl_data": {"port_of_discharge": "CNSHG (Shanghai)"}},
-        "TRC-334-NL": {"status": "OK", "urgency_score": "LOW", "category": "GENERAL", "review_explanation": "Standard operational update. No anomalies detected.", "defect_fields": []}
-    }
-
 def load_submission():
     if SUBMISSION_PATH.exists():
         try:
-            data = json.loads(SUBMISSION_PATH.read_text(encoding="utf-8"))
-            if data: return data # Return real data if it exists
+            return json.loads(SUBMISSION_PATH.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
-            pass
-    return get_mock_data() # Return fake data if file is empty or missing
+            return {}
+    return {}
 
 def save_submission(data):
     SUBMISSION_PATH.write_text(json.dumps(data, indent=2), encoding="utf-8")
@@ -41,61 +30,70 @@ async def dashboard(request: Request):
     confidence = int((ok_count / total * 100)) if total > 0 else 0
 
     rows_html = ""
-    for eid, item in submission.items():
-        status = item.get("status", "UNKNOWN")
-        urgency = item.get("urgency_score", "LOW")
-        category = item.get("category", "GENERAL")
-        
-        status_styles = {
-            "OK": ("bg-emerald-500/10 text-emerald-400 border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.15)]", "bg-emerald-500"),
-            "MISMATCH": ("bg-rose-500/10 text-rose-400 border-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.15)]", "bg-rose-500"),
-            "NEEDS_REVIEW": ("bg-amber-500/10 text-amber-400 border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]", "bg-amber-500")
-        }
-        
-        urgency_styles = {
-            "HIGH": "bg-gradient-to-r from-rose-600 to-rose-400 text-white shadow-[0_0_20px_rgba(244,63,94,0.4)] border-none",
-            "MEDIUM": "bg-gradient-to-r from-amber-500 to-amber-400 text-slate-900 font-bold border-none",
-            "LOW": "bg-slate-700/50 text-slate-300 border border-slate-600"
-        }
-        
-        s_cls, dot_cls = status_styles.get(status, ("bg-slate-800 text-slate-400 border-slate-700", "bg-slate-500"))
-        u_cls = urgency_styles.get(urgency, "bg-slate-700 text-slate-300")
-        
-        explanation = item.get("review_explanation") or "Neural extraction pending. Awaiting processing cycle."
-        defects = item.get("defect_fields", [])
-        defects_html = "".join([f'<span class="inline-block px-2 py-0.5 mt-1 mr-1 text-[9px] uppercase tracking-wider bg-rose-900/40 text-rose-300 border border-rose-800/50 rounded">{d.replace("_", " ")}</span>' for d in defects]) if defects else '<span class="text-xs text-slate-500 italic">No defects</span>'
-
-        rows_html += f"""
-        <tr class="border-b border-slate-800/50 hover:bg-slate-800/80 transition-all duration-300 table-row group cursor-pointer hover-3d relative overflow-hidden" data-status="{status}" data-urgency="{urgency}" onclick="openModal('{eid}')">
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent -translate-x-full group-hover:animate-sweep pointer-events-none"></div>
-            <td class="p-5 font-mono text-xs text-slate-400 group-hover:text-cyan-400 transition-colors relative z-10">
-                <div class="flex items-center gap-3">
-                    <div class="w-1.5 h-1.5 rounded-full {dot_cls} animate-pulse"></div>
-                    {eid}
-                </div>
-            </td>
-            <td class="p-5 text-sm font-medium text-slate-300 tracking-wide relative z-10">{category}</td>
-            <td class="p-5 relative z-10">
-                <span class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-md border backdrop-blur-md {s_cls}">
-                    {status}
-                </span>
-            </td>
-            <td class="p-5 relative z-10">
-                <span class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-md {u_cls}">
-                    {urgency}
-                </span>
-            </td>
-            <td class="p-5 relative z-10">
-                <div class="text-sm text-slate-300 font-medium truncate max-w-xs">{explanation}</div>
-                <div class="mt-1 flex flex-wrap">{defects_html}</div>
-            </td>
-            <td class="p-5 text-right relative z-10">
-                <button class="w-8 h-8 rounded-full bg-slate-700/50 flex items-center justify-center text-slate-400 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-cyan-500/40">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                </button>
+    if not submission:
+        rows_html = """
+        <tr>
+            <td colspan="6" class="p-12 text-center text-slate-500 italic">
+                No submission data found. Run main.py to process the dataset.
             </td>
         </tr>
         """
+    else:
+        for eid, item in submission.items():
+            status = item.get("status", "UNKNOWN")
+            urgency = item.get("urgency_score", "LOW")
+            category = item.get("category", "GENERAL")
+            
+            status_styles = {
+                "OK": ("bg-emerald-500/10 text-emerald-400 border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.15)]", "bg-emerald-500"),
+                "MISMATCH": ("bg-rose-500/10 text-rose-400 border-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.15)]", "bg-rose-500"),
+                "NEEDS_REVIEW": ("bg-amber-500/10 text-amber-400 border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]", "bg-amber-500")
+            }
+            
+            urgency_styles = {
+                "HIGH": "bg-gradient-to-r from-rose-600 to-rose-400 text-white shadow-[0_0_20px_rgba(244,63,94,0.4)] border-none",
+                "MEDIUM": "bg-gradient-to-r from-amber-500 to-amber-400 text-slate-900 font-bold border-none",
+                "LOW": "bg-slate-700/50 text-slate-300 border border-slate-600"
+            }
+            
+            s_cls, dot_cls = status_styles.get(status, ("bg-slate-800 text-slate-400 border-slate-700", "bg-slate-500"))
+            u_cls = urgency_styles.get(urgency, "bg-slate-700 text-slate-300")
+            
+            explanation = item.get("review_explanation") or "Neural extraction pending. Awaiting processing cycle."
+            defects = item.get("defect_fields", [])
+            defects_html = "".join([f'<span class="inline-block px-2 py-0.5 mt-1 mr-1 text-[9px] uppercase tracking-wider bg-rose-900/40 text-rose-300 border border-rose-800/50 rounded">{d.replace("_", " ")}</span>' for d in defects]) if defects else '<span class="text-xs text-slate-500 italic">No defects</span>'
+
+            rows_html += f"""
+            <tr class="border-b border-slate-800/50 hover:bg-slate-800/80 transition-all duration-300 table-row group cursor-pointer hover-3d relative overflow-hidden" data-status="{status}" data-urgency="{urgency}" onclick="openModal('{eid}')">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent -translate-x-full group-hover:animate-sweep pointer-events-none"></div>
+                <td class="p-5 font-mono text-xs text-slate-400 group-hover:text-cyan-400 transition-colors relative z-10">
+                    <div class="flex items-center gap-3">
+                        <div class="w-1.5 h-1.5 rounded-full {dot_cls} animate-pulse"></div>
+                        {eid}
+                    </div>
+                </td>
+                <td class="p-5 text-sm font-medium text-slate-300 tracking-wide relative z-10">{category}</td>
+                <td class="p-5 relative z-10">
+                    <span class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-md border backdrop-blur-md {s_cls}">
+                        {status}
+                    </span>
+                </td>
+                <td class="p-5 relative z-10">
+                    <span class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-md {u_cls}">
+                        {urgency}
+                    </span>
+                </td>
+                <td class="p-5 relative z-10">
+                    <div class="text-sm text-slate-300 font-medium truncate max-w-xs">{explanation}</div>
+                    <div class="mt-1 flex flex-wrap">{defects_html}</div>
+                </td>
+                <td class="p-5 text-right relative z-10">
+                    <button class="w-8 h-8 rounded-full bg-slate-700/50 flex items-center justify-center text-slate-400 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-cyan-500/40">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </td>
+            </tr>
+            """
 
     html = f"""
     <!DOCTYPE html>
@@ -110,8 +108,6 @@ async def dashboard(request: Request):
             body {{ font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030712; color: #e2e8f0; perspective: 1000px; }}
             .font-mono {{ font-family: 'JetBrains Mono', monospace; }}
             .glass-panel {{ background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); }}
-            
-            /* Enhanced 3D Grid & Particles */
             .bg-3d-grid {{
                 position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
                 background-image: 
@@ -122,30 +118,23 @@ async def dashboard(request: Request):
                 animation: grid-move 10s linear infinite;
                 z-index: -2;
             }}
-            #particles-js {{
-                position: fixed; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: 0.4;
-            }}
+            #particles-js {{ position: fixed; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: 0.4; }}
             @keyframes grid-move {{ 0% {{ background-position: 0 0; }} 100% {{ background-position: 0 40px; }} }}
             @keyframes sweep {{ 0% {{ transform: translateX(-100%); }} 100% {{ transform: translateX(200%); }} }}
             .animate-sweep {{ animation: sweep 1.5s ease-in-out infinite; }}
-            
-            /* 3D Card Hover Effects */
             .card-3d {{ transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; transform-style: preserve-3d; }}
             .card-3d:hover {{ transform: translateY(-10px) rotateX(5deg) rotateY(-5deg) scale(1.02); box-shadow: 20px 20px 30px rgba(0,0,0,0.5), 0 0 20px rgba(6,182,212,0.2); }}
             .hover-3d {{ transition: transform 0.2s ease, background-color 0.2s ease; transform-style: preserve-3d; }}
             .hover-3d:hover {{ transform: scale(1.01) translateZ(10px); }}
-            
             #modal-content-box {{ transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }}
             .modal-hidden {{ opacity: 0; transform: scale(0.8) rotateX(-20deg) translateY(50px); }}
             .modal-visible {{ opacity: 1; transform: scale(1) rotateX(0deg) translateY(0); }}
-            
             ::-webkit-scrollbar {{ width: 6px; height: 6px; }}
             ::-webkit-scrollbar-track {{ background: transparent; }}
             ::-webkit-scrollbar-thumb {{ background: #1e293b; border-radius: 10px; }}
             ::-webkit-scrollbar-thumb:hover {{ background: #334155; }}
             @keyframes slideIn {{ to {{ opacity: 1; transform: translateX(0); }} }}
         </style>
-        <!-- Particle.js library for visual flair -->
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     </head>
     <body class="flex h-screen overflow-hidden antialiased selection:bg-cyan-500/30">
@@ -164,7 +153,6 @@ async def dashboard(request: Request):
                         <div class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Team Pai-piriyargal</div>
                     </div>
                 </div>
-                
                 <nav class="mt-8 px-4 space-y-2">
                     <a href="#" class="flex items-center px-2 lg:px-4 py-3 bg-gradient-to-r from-cyan-900/40 to-indigo-900/40 text-cyan-400 border border-cyan-500/30 rounded-xl group relative overflow-hidden shadow-[0_0_15px_rgba(6,182,212,0.15)]">
                         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
@@ -182,13 +170,11 @@ async def dashboard(request: Request):
                         <span class="w-2 h-2 bg-cyan-500 rounded-full animate-pulse shadow-[0_0_8px_#06b6d4]"></span> Automated Extractor Engine Active
                     </p>
                 </div>
-                
                 <div class="flex gap-4 lg:gap-8">
                     <div class="card-3d glass-panel px-4 lg:px-6 py-2 lg:py-3 rounded-2xl border-t border-l border-slate-700/50 flex flex-col items-center justify-center">
                         <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-1">Match Rate</span>
                         <div class="text-xl lg:text-3xl font-bold text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.5)]">{confidence}%</div>
                     </div>
-                    
                     <div class="flex gap-4">
                         <div class="card-3d glass-panel px-4 lg:px-6 py-2 lg:py-3 rounded-2xl border-t border-l border-rose-900/30 flex flex-col items-end">
                             <span class="text-[10px] text-rose-500 font-bold uppercase tracking-wider mb-1">Exceptions</span>
@@ -206,9 +192,7 @@ async def dashboard(request: Request):
                 <div class="flex gap-2 p-1 bg-slate-900/80 rounded-xl border border-slate-800 shadow-inner">
                     <button onclick="filterTable('all', this)" class="filter-btn active px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-slate-700 text-white shadow-[0_2px_10px_rgba(0,0,0,0.3)] transition-all">Global Feed</button>
                     <button onclick="filterTable('review', this)" class="filter-btn px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-500 hover:text-slate-300 transition-all">Pending Review</button>
-                    <button onclick="filterTable('high', this)" class="filter-btn px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-500 hover:text-rose-400 transition-all flex items-center gap-2">
-                        Critical Priority
-                    </button>
+                    <button onclick="filterTable('high', this)" class="filter-btn px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-500 hover:text-rose-400 transition-all flex items-center gap-2">Critical Priority</button>
                 </div>
             </div>
 
@@ -237,7 +221,6 @@ async def dashboard(request: Request):
             <div class="absolute inset-0 bg-[#030712]/90 backdrop-blur-md" onclick="closeModal()"></div>
             <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none perspective-1000">
                 <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-700/50 w-full max-w-6xl rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8),0_0_30px_rgba(6,182,212,0.15)] pointer-events-auto flex flex-col max-h-[90vh] modal-hidden" id="modal-content-box">
-                    
                     <div class="flex items-center justify-between p-6 lg:p-8 border-b border-slate-800 shrink-0 bg-slate-900/50 rounded-t-2xl">
                         <div class="card-3d">
                             <div class="flex items-center gap-3 mb-2">
@@ -251,33 +234,25 @@ async def dashboard(request: Request):
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                         </button>
                     </div>
-
                     <div class="flex-1 overflow-auto p-6 lg:p-8 relative bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-[#0a0f18] to-[#0a0f18]">
                         <div class="absolute left-1/2 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-cyan-900/50 to-transparent hidden md:block"></div>
-                        
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
                             <div class="space-y-6">
                                 <div class="flex items-center justify-between pb-3 border-b border-emerald-900/30">
-                                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-widest flex items-center gap-2 drop-shadow-[0_0_5px_rgba(52,211,153,0.5)]">
-                                        Source Document (SI)
-                                    </h3>
+                                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-widest flex items-center gap-2 drop-shadow-[0_0_5px_rgba(52,211,153,0.5)]">Source Document (SI)</h3>
                                     <span class="text-[9px] font-mono text-slate-400 border border-slate-700 px-2 py-0.5 rounded shadow-inner">LOCKED</span>
                                 </div>
                                 <div id="si-fields" class="space-y-4 perspective-1000"></div>
                             </div>
-                            
                             <div class="space-y-6">
                                 <div class="flex items-center justify-between pb-3 border-b border-cyan-900/30">
-                                    <h3 class="text-sm font-bold text-cyan-400 uppercase tracking-widest flex items-center gap-2 drop-shadow-[0_0_5px_rgba(34,211,238,0.5)]">
-                                        Extracted Draft (BL)
-                                    </h3>
+                                    <h3 class="text-sm font-bold text-cyan-400 uppercase tracking-widest flex items-center gap-2 drop-shadow-[0_0_5px_rgba(34,211,238,0.5)]">Extracted Draft (BL)</h3>
                                     <span class="text-[9px] font-mono text-cyan-900 border border-cyan-800 px-2 py-0.5 rounded bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.4)] font-bold">EDITABLE</span>
                                 </div>
                                 <div id="bl-fields" class="space-y-4"></div>
                             </div>
                         </div>
                     </div>
-
                     <div class="p-6 lg:px-8 bg-slate-950 border-t border-slate-800 rounded-b-2xl shrink-0 flex justify-between items-center shadow-[inset_0_10px_20px_rgba(0,0,0,0.5)]">
                         <div class="text-xs font-mono text-slate-500 flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full inline-block shadow-[0_0_5px_#10b981] animate-pulse"></span> Network Synchronized
@@ -295,7 +270,6 @@ async def dashboard(request: Request):
         </div>
 
         <script>
-            // Initialize particles.js for holographic ambient background
             particlesJS("particles-js", {{
                 "particles": {{"number":{{"value":40,"density":{{"enable":true,"value_area":800}}}},"color":{{"value":"#06b6d4"}},"shape":{{"type":"circle"}},"opacity":{{"value":0.3,"random":true}},"size":{{"value":3,"random":true}},"line_linked":{{"enable":true,"distance":150,"color":"#06b6d4","opacity":0.2,"width":1}},"move":{{"enable":true,"speed":1,"direction":"top","random":true,"straight":false,"out_mode":"out","bounce":false}}}},
                 "interactivity":{{"detect_on":"canvas","events":{{"onhover":{{"enable":true,"mode":"grab"}},"onclick":{{"enable":false}},"resize":true}},"modes":{{"grab":{{"distance":140,"line_linked":{{"opacity":0.5}}}}}}}}
@@ -422,8 +396,7 @@ async def dashboard(request: Request):
 async def get_review_data(eid: str):
     submission = load_submission()
     if eid not in submission:
-        raise HTTPException(status_code=404, detail="Trace ID not found in datastore")
-    
+        raise HTTPException(status_status=404, detail="Trace ID not found in datastore")
     item = submission[eid]
     return JSONResponse(content={
         "review_explanation": item.get("review_explanation", "Manual discrepancy check required."),
@@ -436,21 +409,16 @@ async def get_review_data(eid: str):
 async def save_review(eid: str, request: Request):
     corrected_data = await request.json()
     submission = load_submission()
-    
     if eid in submission:
         submission[eid]["status"] = "OK"
         submission[eid]["urgency_score"] = "LOW"
         submission[eid]["review_explanation"] = "Manually corrected and cleared by human auditor."
         submission[eid]["defect_fields"] = []
-        
         if "bl_data" not in submission[eid]:
             submission[eid]["bl_data"] = {}
-            
         for key, val in corrected_data.items():
             submission[eid]["bl_data"][key] = val
-            
         save_submission(submission)
-        
     return JSONResponse(content={"status": "success"})
 
 if __name__ == "__main__":
