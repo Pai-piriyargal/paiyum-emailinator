@@ -60,12 +60,15 @@ def run_pipeline(data_source="sdoc-hackathon-bundle", output_file="submission.js
 
         # 1. Attachment check
         if len(atts) < 2:
+            expl, urgency = comparator.get_review_details("missing_attachment")
             submission[eid] = {
                 "category": "BL_COMPARISON",
                 "status": "NEEDS_REVIEW",
                 "review_reason": "missing_attachment",
                 "has_defect": False,
-                "defect_fields": []
+                "defect_fields": [],
+                "explanation": expl,
+                "urgency_score": urgency
             }
             stats["statuses"]["NEEDS_REVIEW"] = stats["statuses"].get("NEEDS_REVIEW", 0) + 1
             stats["review_reasons"]["missing_attachment"] = stats["review_reasons"].get("missing_attachment", 0) + 1
@@ -84,12 +87,15 @@ def run_pipeline(data_source="sdoc-hackathon-bundle", output_file="submission.js
 
         # Check unreadable
         if any(d["text"] is None for d in parsed_docs):
+            expl, urgency = comparator.get_review_details("unreadable")
             submission[eid] = {
                 "category": "BL_COMPARISON",
                 "status": "NEEDS_REVIEW",
                 "review_reason": "unreadable",
                 "has_defect": False,
-                "defect_fields": []
+                "defect_fields": [],
+                "explanation": expl,
+                "urgency_score": urgency
             }
             stats["statuses"]["NEEDS_REVIEW"] = stats["statuses"].get("NEEDS_REVIEW", 0) + 1
             stats["review_reasons"]["unreadable"] = stats["review_reasons"].get("unreadable", 0) + 1
@@ -100,12 +106,15 @@ def run_pipeline(data_source="sdoc-hackathon-bundle", output_file="submission.js
         bl_doc = next((d for d in parsed_docs if d["type"] == "BL"), None)
 
         if not si_doc or not bl_doc:
+            expl, urgency = comparator.get_review_details("wrong_doc_type")
             submission[eid] = {
                 "category": "BL_COMPARISON",
                 "status": "NEEDS_REVIEW",
                 "review_reason": "wrong_doc_type",
                 "has_defect": False,
-                "defect_fields": []
+                "defect_fields": [],
+                "explanation": expl,
+                "urgency_score": urgency
             }
             stats["statuses"]["NEEDS_REVIEW"] = stats["statuses"].get("NEEDS_REVIEW", 0) + 1
             stats["review_reasons"]["wrong_doc_type"] = stats["review_reasons"].get("wrong_doc_type", 0) + 1
@@ -116,15 +125,22 @@ def run_pipeline(data_source="sdoc-hackathon-bundle", output_file="submission.js
         bl_fields = extractor.extract_fields(bl_doc["text"])
 
         # 5. Compare fields
-        status, review_reason, has_defect, defect_fields = comparator.compare(si_fields, bl_fields)
+        status, review_reason, has_defect, defect_fields, explanation, urgency_score = comparator.compare_with_details(
+            si_fields, bl_fields
+        )
 
-        submission[eid] = {
+        entry = {
             "category": "BL_COMPARISON",
             "status": status,
             "review_reason": review_reason,
             "has_defect": has_defect,
             "defect_fields": defect_fields
         }
+        if status == "NEEDS_REVIEW":
+            entry["explanation"] = explanation
+            entry["urgency_score"] = urgency_score
+
+        submission[eid] = entry
 
         stats["statuses"][status] = stats["statuses"].get(status, 0) + 1
         if review_reason:
@@ -155,3 +171,4 @@ def run_pipeline(data_source="sdoc-hackathon-bundle", output_file="submission.js
 if __name__ == "__main__":
     data_dir = sys.argv[1] if len(sys.argv) > 1 else "sdoc-hackathon-bundle"
     run_pipeline(data_dir)
+

@@ -66,5 +66,73 @@ class TestShippingPipeline(unittest.TestCase):
         self.assertTrue(has_defect)
         self.assertIn("consignee", defect_fields)
 
+    def test_corporate_suffix_stripping(self):
+        si = {
+            "shipper": "APRIL FAR EAST LTD",
+            "consignee": "EAST BRIGHT INC",
+            "notify_party": "EAST BRIGHT CORP",
+            "port_of_loading": "NANTONG, CHINA",
+            "port_of_discharge": "KARACHI, PAKISTAN",
+            "container_count": 6,
+            "gross_weight_kg": 131058.0
+        }
+        bl = {
+            "shipper": "APRIL FAR EAST INC",
+            "consignee": "EAST BRIGHT LLC",
+            "notify_party": "EAST BRIGHT COMPANY",
+            "port_of_loading": "NANTONG, CHINA",
+            "port_of_discharge": "KARACHI, PAKISTAN",
+            "container_count": 6,
+            "gross_weight_kg": 131058.0
+        }
+        status, reason, has_defect, defect_fields = self.comparator.compare(si, bl)
+        self.assertEqual(status, "OK")
+        self.assertFalse(has_defect)
+
+    def test_unlocode_lookup(self):
+        si = {
+            "shipper": "APRIL FAR EAST",
+            "consignee": "EAST BRIGHT",
+            "notify_party": "EAST BRIGHT",
+            "port_of_loading": "CNNTG",  # Maps to NANTONG
+            "port_of_discharge": "KARACHI, PAKISTAN (PKKHI)",
+            "container_count": 6,
+            "gross_weight_kg": 131058.0
+        }
+        bl = {
+            "shipper": "APRIL FAR EAST",
+            "consignee": "EAST BRIGHT",
+            "notify_party": "EAST BRIGHT",
+            "port_of_loading": "NANTONG PORT, CHINA",
+            "port_of_discharge": "KARACHI",
+            "container_count": 6,
+            "gross_weight_kg": 131058.0
+        }
+        status, reason, has_defect, defect_fields = self.comparator.compare(si, bl)
+        self.assertEqual(status, "OK")
+
+    def test_needs_review_explanation_and_urgency(self):
+        expl_att, urg_att = self.comparator.get_review_details("missing_attachment")
+        self.assertEqual(urg_att, "HIGH")
+        self.assertIn("missing", expl_att)
+
+        expl_unread, urg_unread = self.comparator.get_review_details("unreadable")
+        self.assertEqual(urg_unread, "HIGH")
+
+        expl_val, urg_val = self.comparator.get_review_details(
+            "missing_value", missing_in_si=["consignee"]
+        )
+        self.assertEqual(urg_val, "HIGH")
+        self.assertIn("consignee", expl_val)
+
+        status, reason, has_defect, defect_fields, expl, urgency = self.comparator.compare_with_details(
+            {"shipper": None}, {"shipper": "APRIL"}
+        )
+        self.assertEqual(status, "NEEDS_REVIEW")
+        self.assertEqual(reason, "missing_value")
+        self.assertEqual(urgency, "HIGH")
+        self.assertIsNotNone(expl)
+
 if __name__ == "__main__":
     unittest.main()
+
