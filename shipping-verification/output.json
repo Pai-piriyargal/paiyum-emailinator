@@ -18,7 +18,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_004": {
     "category": "BL_COMPARISON",
@@ -35,14 +37,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_006": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_007": {
     "category": "SI_REQUEST",
@@ -56,14 +62,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_009": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_010": {
     "category": "INVOICE_QUERY",
@@ -88,10 +98,13 @@
   },
   "email_013": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee",
+      "port_of_discharge"
+    ]
   },
   "email_014": {
     "category": "SI_REQUEST",
@@ -112,7 +125,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_017": {
     "category": "GENERAL",
@@ -126,21 +141,27 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_019": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_020": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_021": {
     "category": "SI_REQUEST",
@@ -154,14 +175,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_023": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_024": {
     "category": "INVOICE_QUERY",
@@ -176,6 +201,7 @@
     "review_reason": null,
     "has_defect": true,
     "defect_fields": [
+      "consignee",
       "port_of_discharge",
       "container_count"
     ]
@@ -192,54 +218,70 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_028": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_029": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_030": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_031": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee",
+      "container_count",
+      "gross_weight_kg"
+    ]
   },
   "email_032": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_033": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_034": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -248,14 +290,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_036": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_037": {
     "category": "GENERAL",
@@ -269,14 +315,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_039": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_040": {
     "category": "BL_COMPARISON",
@@ -297,19 +347,24 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_043": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee",
+      "container_count"
+    ]
   },
   "email_044": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -322,17 +377,21 @@
   },
   "email_046": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "notify_party"
+    ]
   },
   "email_047": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_048": {
     "category": "INVOICE_QUERY",
@@ -346,26 +405,30 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_050": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_051": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
   "email_052": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -388,14 +451,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_056": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_057": {
     "category": "SI_REQUEST",
@@ -416,7 +483,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_060": {
     "category": "INVOICE_QUERY",
@@ -430,7 +499,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_062": {
     "category": "INVOICE_QUERY",
@@ -444,42 +515,54 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_064": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
   "email_065": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee",
+      "notify_party",
+      "port_of_discharge"
+    ]
   },
   "email_066": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_067": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_068": {
     "category": "BL_COMPARISON",
-    "status": "OK",
+    "status": "MISMATCH",
     "review_reason": null,
-    "has_defect": false,
-    "defect_fields": []
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_069": {
     "category": "INVOICE_QUERY",
@@ -497,10 +580,13 @@
   },
   "email_071": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "port_of_discharge",
+      "container_count"
+    ]
   },
   "email_072": {
     "category": "SPAM",
@@ -514,7 +600,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_074": {
     "category": "INVOICE_QUERY",
@@ -542,7 +630,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_078": {
     "category": "INVOICE_QUERY",
@@ -563,21 +653,27 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_081": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_082": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_083": {
     "category": "SI_REQUEST",
@@ -591,7 +687,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_085": {
     "category": "INVOICE_QUERY",
@@ -619,7 +717,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_089": {
     "category": "SI_REQUEST",
@@ -630,24 +730,30 @@
   },
   "email_090": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_091": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "container_count"
+    ]
   },
   "email_092": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_093": {
     "category": "SI_REQUEST",
@@ -661,19 +767,23 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_095": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_096": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -682,7 +792,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_098": {
     "category": "INVOICE_QUERY",
@@ -703,7 +815,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_101": {
     "category": "SI_REQUEST",
@@ -724,7 +838,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_104": {
     "category": "INVOICE_QUERY",
@@ -738,21 +854,27 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_106": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_107": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_108": {
     "category": "INVOICE_QUERY",
@@ -766,21 +888,28 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_110": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_111": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee",
+      "container_count"
+    ]
   },
   "email_112": {
     "category": "INVOICE_QUERY",
@@ -791,8 +920,8 @@
   },
   "email_113": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -801,7 +930,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_115": {
     "category": "INVOICE_QUERY",
@@ -826,38 +957,48 @@
   },
   "email_118": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_119": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_120": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_121": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "gross_weight_kg"
+    ]
   },
   "email_122": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_123": {
     "category": "SPAM",
@@ -871,7 +1012,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_125": {
     "category": "SI_REQUEST",
@@ -900,7 +1043,7 @@
     "review_reason": null,
     "has_defect": true,
     "defect_fields": [
-      "port_of_loading",
+      "consignee",
       "gross_weight_kg"
     ]
   },
@@ -910,7 +1053,7 @@
     "review_reason": null,
     "has_defect": true,
     "defect_fields": [
-      "port_of_loading",
+      "consignee",
       "port_of_discharge"
     ]
   },
@@ -926,21 +1069,27 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_132": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_133": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "gross_weight_kg"
+    ]
   },
   "email_134": {
     "category": "GENERAL",
@@ -954,28 +1103,36 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_136": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_137": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_138": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_139": {
     "category": "INVOICE_QUERY",
@@ -996,7 +1153,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_142": {
     "category": "INVOICE_QUERY",
@@ -1007,29 +1166,36 @@
   },
   "email_143": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_144": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee",
+      "container_count"
+    ]
   },
   "email_145": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "shipper"
+    ]
   },
   "email_146": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -1045,14 +1211,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_149": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_150": {
     "category": "GENERAL",
@@ -1073,7 +1243,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_153": {
     "category": "GENERAL",
@@ -1108,14 +1280,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_158": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_159": {
     "category": "INVOICE_QUERY",
@@ -1129,35 +1305,45 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_161": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_162": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_163": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_164": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_165": {
     "category": "GENERAL",
@@ -1171,12 +1357,14 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_167": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -1185,7 +1373,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_169": {
     "category": "INVOICE_QUERY",
@@ -1206,14 +1396,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_172": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_173": {
     "category": "GENERAL",
@@ -1224,38 +1418,50 @@
   },
   "email_174": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee",
+      "notify_party",
+      "port_of_discharge"
+    ]
   },
   "email_175": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_176": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_177": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_178": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "container_count"
+    ]
   },
   "email_179": {
     "category": "INVOICE_QUERY",
@@ -1280,17 +1486,22 @@
   },
   "email_182": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "port_of_discharge",
+      "container_count"
+    ]
   },
   "email_183": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_184": {
     "category": "GENERAL",
@@ -1311,14 +1522,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_187": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_188": {
     "category": "GENERAL",
@@ -1332,14 +1547,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_190": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_191": {
     "category": "INVOICE_QUERY",
@@ -1360,7 +1579,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_194": {
     "category": "INVOICE_QUERY",
@@ -1374,26 +1595,30 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_196": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_197": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
   "email_198": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -1402,7 +1627,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_200": {
     "category": "SI_REQUEST",
@@ -1416,7 +1643,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_202": {
     "category": "SI_REQUEST",
@@ -1458,28 +1687,36 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_208": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_209": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_210": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_211": {
     "category": "INVOICE_QUERY",
@@ -1507,7 +1744,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_215": {
     "category": "SPAM",
@@ -1549,14 +1788,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_221": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_222": {
     "category": "GENERAL",
@@ -1570,7 +1813,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_224": {
     "category": "GENERAL",
@@ -1581,10 +1826,12 @@
   },
   "email_225": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_226": {
     "category": "GENERAL",
@@ -1595,24 +1842,30 @@
   },
   "email_227": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_228": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_229": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_230": {
     "category": "SI_REQUEST",
@@ -1640,7 +1893,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_234": {
     "category": "SI_REQUEST",
@@ -1651,8 +1906,8 @@
   },
   "email_235": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -1668,7 +1923,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_238": {
     "category": "SI_REQUEST",
@@ -1679,8 +1936,8 @@
   },
   "email_239": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -1689,7 +1946,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_241": {
     "category": "GENERAL",
@@ -1703,14 +1962,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_243": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_244": {
     "category": "SI_REQUEST",
@@ -1724,21 +1987,27 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_246": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_247": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_248": {
     "category": "SPAM",
@@ -1749,24 +2018,30 @@
   },
   "email_249": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_250": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_251": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_252": {
     "category": "SI_REQUEST",
@@ -1798,17 +2073,22 @@
   },
   "email_256": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "shipper",
+      "port_of_discharge"
+    ]
   },
   "email_257": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_258": {
     "category": "GENERAL",
@@ -1822,7 +2102,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_260": {
     "category": "SI_REQUEST",
@@ -1836,7 +2118,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_262": {
     "category": "INVOICE_QUERY",
@@ -1850,21 +2134,27 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_264": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_265": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_266": {
     "category": "SI_REQUEST",
@@ -1896,17 +2186,21 @@
   },
   "email_270": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "port_of_discharge"
+    ]
   },
   "email_271": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_272": {
     "category": "INVOICE_QUERY",
@@ -1920,7 +2214,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_274": {
     "category": "INVOICE_QUERY",
@@ -1931,8 +2227,8 @@
   },
   "email_275": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -1941,14 +2237,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_277": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_278": {
     "category": "SI_REQUEST",
@@ -1962,7 +2262,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_280": {
     "category": "INVOICE_QUERY",
@@ -1976,14 +2278,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_282": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_283": {
     "category": "SI_REQUEST",
@@ -2025,7 +2331,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_289": {
     "category": "SI_REQUEST",
@@ -2039,21 +2347,27 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_291": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_292": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_293": {
     "category": "SI_REQUEST",
@@ -2074,12 +2388,14 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_296": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -2102,28 +2418,36 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_300": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_301": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_302": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_303": {
     "category": "INVOICE_QUERY",
@@ -2144,7 +2468,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_306": {
     "category": "SI_REQUEST",
@@ -2155,31 +2481,39 @@
   },
   "email_307": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_308": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_309": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_310": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_311": {
     "category": "SI_REQUEST",
@@ -2190,17 +2524,22 @@
   },
   "email_312": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "shipper",
+      "notify_party"
+    ]
   },
   "email_313": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_314": {
     "category": "INVOICE_QUERY",
@@ -2228,42 +2567,54 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_318": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_319": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_320": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_321": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_322": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_323": {
     "category": "INVOICE_QUERY",
@@ -2274,10 +2625,14 @@
   },
   "email_324": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "shipper",
+      "consignee",
+      "container_count"
+    ]
   },
   "email_325": {
     "category": "GENERAL",
@@ -2291,14 +2646,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_327": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_328": {
     "category": "GENERAL",
@@ -2354,8 +2713,8 @@
   },
   "email_335": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -2364,28 +2723,36 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_337": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_338": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_339": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_340": {
     "category": "INVOICE_QUERY",
@@ -2399,7 +2766,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_342": {
     "category": "BL_COMPARISON",
@@ -2407,6 +2776,7 @@
     "review_reason": null,
     "has_defect": true,
     "defect_fields": [
+      "consignee",
       "notify_party",
       "container_count"
     ]
@@ -2416,14 +2786,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_344": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_345": {
     "category": "GENERAL",
@@ -2448,15 +2822,15 @@
   },
   "email_348": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
   "email_349": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -2465,35 +2839,45 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_351": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_352": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_353": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_354": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_355": {
     "category": "INVOICE_QUERY",
@@ -2514,7 +2898,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_358": {
     "category": "SI_REQUEST",
@@ -2535,21 +2921,29 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_361": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee",
+      "port_of_discharge",
+      "gross_weight_kg"
+    ]
   },
   "email_362": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_363": {
     "category": "GENERAL",
@@ -2560,8 +2954,8 @@
   },
   "email_364": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -2581,8 +2975,8 @@
   },
   "email_367": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -2591,7 +2985,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_369": {
     "category": "GENERAL",
@@ -2605,14 +3001,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_371": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_372": {
     "category": "GENERAL",
@@ -2647,42 +3047,55 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_377": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_378": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_379": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "shipper",
+      "consignee"
+    ]
   },
   "email_380": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_381": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_382": {
     "category": "GENERAL",
@@ -2693,8 +3106,8 @@
   },
   "email_383": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -2703,14 +3116,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_385": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_386": {
     "category": "INVOICE_QUERY",
@@ -2731,7 +3148,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_389": {
     "category": "INVOICE_QUERY",
@@ -2766,7 +3185,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_394": {
     "category": "INVOICE_QUERY",
@@ -2794,14 +3215,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_398": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_399": {
     "category": "INVOICE_QUERY",
@@ -2815,14 +3240,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_401": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_402": {
     "category": "INVOICE_QUERY",
@@ -2864,26 +3293,32 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_408": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_409": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_410": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -2892,7 +3327,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_412": {
     "category": "INVOICE_QUERY",
@@ -2906,7 +3343,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_414": {
     "category": "GENERAL",
@@ -2924,10 +3363,12 @@
   },
   "email_416": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "gross_weight_kg"
+    ]
   },
   "email_417": {
     "category": "INVOICE_QUERY",
@@ -2948,7 +3389,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_420": {
     "category": "INVOICE_QUERY",
@@ -2962,7 +3405,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_422": {
     "category": "INVOICE_QUERY",
@@ -2976,14 +3421,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_424": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_425": {
     "category": "INVOICE_QUERY",
@@ -2998,7 +3447,6 @@
     "review_reason": null,
     "has_defect": true,
     "defect_fields": [
-      "port_of_discharge",
       "container_count"
     ]
   },
@@ -3007,7 +3455,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_428": {
     "category": "BL_COMPARISON",
@@ -3021,14 +3471,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_430": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_431": {
     "category": "SI_REQUEST",
@@ -3042,49 +3496,63 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_433": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_434": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_435": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_436": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_437": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_438": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_439": {
     "category": "INVOICE_QUERY",
@@ -3098,7 +3566,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_441": {
     "category": "INVOICE_QUERY",
@@ -3112,21 +3582,27 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_443": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_444": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_445": {
     "category": "GENERAL",
@@ -3140,21 +3616,27 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_447": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_448": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_449": {
     "category": "GENERAL",
@@ -3175,7 +3657,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_452": {
     "category": "INVOICE_QUERY",
@@ -3196,7 +3680,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_455": {
     "category": "INVOICE_QUERY",
@@ -3210,7 +3696,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_457": {
     "category": "SPAM",
@@ -3231,7 +3719,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_460": {
     "category": "SI_REQUEST",
@@ -3252,7 +3742,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_463": {
     "category": "INVOICE_QUERY",
@@ -3273,35 +3765,45 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_466": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_467": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_468": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
-    "has_defect": false,
-    "defect_fields": []
+    "status": "MISMATCH",
+    "review_reason": null,
+    "has_defect": true,
+    "defect_fields": [
+      "container_count"
+    ]
   },
   "email_469": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_470": {
     "category": "GENERAL",
@@ -3333,8 +3835,8 @@
   },
   "email_474": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -3343,14 +3845,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_476": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_477": {
     "category": "SI_REQUEST",
@@ -3364,40 +3870,50 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_479": {
     "category": "BL_COMPARISON",
-    "status": "OK",
+    "status": "MISMATCH",
     "review_reason": null,
-    "has_defect": false,
-    "defect_fields": []
+    "has_defect": true,
+    "defect_fields": [
+      "consignee"
+    ]
   },
   "email_480": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_481": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_482": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_483": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -3420,14 +3936,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_487": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_488": {
     "category": "GENERAL",
@@ -3452,8 +3972,8 @@
   },
   "email_491": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -3469,12 +3989,14 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_494": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -3483,14 +4005,18 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_496": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_497": {
     "category": "INVOICE_QUERY",
@@ -3501,8 +4027,8 @@
   },
   "email_498": {
     "category": "BL_COMPARISON",
-    "status": "NEEDS_REVIEW",
-    "review_reason": "missing_value",
+    "status": "OK",
+    "review_reason": null,
     "has_defect": false,
     "defect_fields": []
   },
@@ -3511,7 +4037,9 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee, notify_party, port_of_discharge, port_of_loading, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_500": {
     "category": "INVOICE_QUERY",
@@ -3525,112 +4053,144 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (container_count, gross_weight_kg, notify_party, port_of_discharge, port_of_loading) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_502": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (container_count, gross_weight_kg, notify_party, port_of_discharge, port_of_loading) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_503": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (container_count, gross_weight_kg, notify_party, port_of_discharge, port_of_loading) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_504": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (container_count, gross_weight_kg, notify_party, port_of_discharge, port_of_loading) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_505": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (container_count, gross_weight_kg, notify_party, port_of_discharge, port_of_loading) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_506": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_507": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_508": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_509": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_510": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_attachment",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more required shipping documents (SI or draft BL) are missing from the email attachments.",
+    "urgency_score": "HIGH"
   },
   "email_511": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_512": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_513": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_514": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_515": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "unreadable",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "One or more email attachments could not be read or parsed due to file corruption or unsupported formatting.",
+    "urgency_score": "HIGH"
   },
   "email_516": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (gross_weight_kg) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_517": {
     "category": "BL_COMPARISON",
@@ -3638,6 +4198,7 @@
     "review_reason": null,
     "has_defect": true,
     "defect_fields": [
+      "consignee",
       "port_of_loading",
       "port_of_discharge"
     ]
@@ -3647,20 +4208,26 @@
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (gross_weight_kg) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_519": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (container_count, shipper) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   },
   "email_520": {
     "category": "BL_COMPARISON",
     "status": "NEEDS_REVIEW",
     "review_reason": "missing_value",
     "has_defect": false,
-    "defect_fields": []
+    "defect_fields": [],
+    "explanation": "Mandatory shipment fields (consignee) could not be extracted from the SI or BL document.",
+    "urgency_score": "HIGH"
   }
 }

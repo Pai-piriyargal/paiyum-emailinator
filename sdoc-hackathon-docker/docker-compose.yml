@@ -12,7 +12,7 @@ services:
     build: ./server
     ports:
       # host 8080 -> container 8000 (8000 often taken locally; change freely)
-      - "8080:8000"
+      - "8081:8000"
     volumes:
       # dataset served to participants (inbox + attachments + sample_submission)
       - ./data_v2:/data:ro

@@ -153,7 +153,10 @@ def run_pipeline(data_source="sdoc-hackathon-bundle", output_file="submission.js
     output_path.write_text(json.dumps(submission, indent=2), encoding="utf-8")
     print(f"Successfully saved submission to: {output_path.absolute()}")
 
-    # Also save to output.json
+    # Also save to root submission.json and local output.json
+    root_sub_path = Path(__file__).parent.parent / "submission.json"
+    root_sub_path.write_text(json.dumps(submission, indent=2), encoding="utf-8")
+
     output_json_path = Path(__file__).parent / "output.json"
     output_json_path.write_text(json.dumps(submission, indent=2), encoding="utf-8")
 
